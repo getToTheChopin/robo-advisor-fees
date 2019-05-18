@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Impact of Robo-Advisor Fees</h1>
+
+    <div id="roboToolDiv">
+    
+        <div id="mainDiv">
+
+            <div id="assumptionTableDiv">
+                <table>
+                    <tr>
+                        <th colspan="2">Assumptions</th>
+                    </tr>
+                    <tr>
+                        <td width="40%">Current savings ($)</td>
+                        <td width="60%">
+                            <input type="number" id="startingPortfolio" class="userInput input-number–noSpinners" value="15000" min="0" max="10000000" step="1000">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Annual savings ($)</td>
+                        <td>
+                            <input type="number" id="annualSavings" class="userInput input-number–noSpinners" value="7000" min="0" max="100000" step="100">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Annual return (%)</td>
+                        <td>
+                            <input type="number" id="annualReturn" class="userInput input-number–noSpinners" value="6.0" min="0" max="15.0" step="0.1">
+                            <input type="range" min="0" max="15.0" value="6.0" step="0.1" class="slider userInput" id="annualReturnSlider">  
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Annual robo-advisor fee (%)</td>
+                        <td>
+                            <input type="number" id="annualFee" class="userInput input-number–noSpinners" value="0.25" min="0" max="2.0" step="0.05">
+                            <input type="range" min="0" max="2.0" value="0.25" step="0.05" class="slider userInput" id="annualFeeSlider">  
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Hours spent per year on DIY investing</td>
+                        <td>
+                            <input type="number" id="annualHoursSpent" class="userInput input-number–noSpinners" value="10" min="1" max="50" step="1">
+                            <input type="range" min="1" max="50" value="10" step="1" class="slider userInput" id="annualHoursSpentSlider">  
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td># of years to look ahead</td>
+                        <td>
+                            <input type="number" id="numYears" class="userInput input-number–noSpinners" value="40" min="1" max="100" step="1">
+                            <input type="range" min="1" max="100" value="40" step="1" class="slider userInput" id="numYearsSlider">  
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div id="outputDiv">
+
+                <div id="outputBarChartDiv">
+                    <canvas id="outputBarChart"></canvas>
+                </div>
+
+                <div id="outputTextDivPrimary">
+
+                </div>
+
+                <div id="outputTextDivSecondary">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="fullChartDiv">
+            <canvas id="fullChart"></canvas>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="roboAdvisorFeesScript.js"></script>
+
+</body>
+
+</html> 
